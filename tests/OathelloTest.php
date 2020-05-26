@@ -15,7 +15,7 @@ class OathelloTest extends TestCase
     /**
      * @var session
      */
-    private $session;
+    public $session;
 
     /**
      * Setup Client
@@ -23,6 +23,18 @@ class OathelloTest extends TestCase
     protected function setUp(): void
     {
         $this->oathello = new Oathello;
+        $data = [
+            'envelope' => [
+                'documents' => [[
+                    'title'    => 'test',
+                    'fileName' => 'test.pdf',
+                    'mode'     => 'Reading',
+                    'content'  => 'dGVzdA=='
+                ]]
+            ],
+            'sessionStatusChangeCallbackUrl' => 'test'
+        ];
+        $this->session = $this->oathello->post('Session', $data);
     }
 
     /**
@@ -32,7 +44,7 @@ class OathelloTest extends TestCase
      */
     public function testCreateSession(): void
     {
-        print_r($this->oathello->post('Session'));
+        $this->assertEquals($this->session->status, 'ongoing');
     }
 
     /**
@@ -43,8 +55,8 @@ class OathelloTest extends TestCase
     public function testGetSession(): void
     {
         $this->assertEquals(
-            $this->oathello->get('Session/ebbdadbc-f6f5-4ef7-9aa3-0df1ca0eb230')->status,
-            'finished'
+            $this->oathello->get('Session/'.$this->session->sessionId)->status,
+            'ongoing'
         );
     }
 }

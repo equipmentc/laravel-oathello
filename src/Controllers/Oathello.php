@@ -19,6 +19,7 @@ class Oathello
     public function __construct()
     {
         $this->client = new Client([
+            'headers' => [ 'Content-Type' => 'application/json' ],
             'base_uri' => config('oathello.endpoint'),
             'auth'     => [config('oathello.key'), config('oathello.key')]
         ]);
@@ -34,6 +35,11 @@ class Oathello
     public function __call($name, array $arguments)
     {
         try {
+
+            if ($arguments[1]) {
+                $arguments[1] = ['json' => $arguments[1]];
+            }
+
             $response = call_user_func_array([$this->client, $name], $arguments);
         }
         catch (ClientException $e) {

@@ -17,13 +17,13 @@ use Equipmentc\Oathello\Controllers\Oathello;
 
 $oathello = new Oathello;
 $oathello->get('Session/xyz');
-$oathello->post('Session', $json);
+$oathello->post('Session', $array);
 ```
 
 ## Or use the facade
 ```
 Oathello::get('Session/xyz');
-Oathello::post('Session', $json);
+Oathello::post('Session', $array);
 ```
 
 ## Swagger endpoints
