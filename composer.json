@@ -1,0 +1,37 @@
+{
+    "name": "equipmentc/laravel-oathello",
+    "description": "A Laravel wrapper for the Oathello API",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Trevor Sewell",
+            "email": "trevore@equipmentconnect.co.uk"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.5"
+    },
+    "autoload": {
+        "files": [
+            "src\\Helpers\\TestHelpers.php"
+        ],
+        "psr-4": {
+            "Equipmentc\\Oathello\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Equipmentc\\Oathello\\Providers\\ServiceProvider"
+            ],
+            "aliases": {
+                "Oathello": "Equipmentc\\Oathello\\Facades\\Oathello"
+            }
+        }
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "require-dev": {
+        "phpunit/phpunit": "^8.5"
+    }
+}
