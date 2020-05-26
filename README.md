@@ -5,7 +5,7 @@ Oathello API Laravel package
 composer require equipmentc/laravel-oathello
 
 ## add to .env
-OATHELLO_ENDPOINT=https://sign.oathello.com/api/  (optional)
+OATHELLO_ENDPOINT=https://sign.oathello.com/api/  (optional)  
 OATHELLO_API_KEY=xyz
 
 ## To use
