@@ -16,12 +16,11 @@ class Oathello
      *
      * @return void
      */
-    public function __construct(string $endpoint = null, string $key = null)
+    public function __construct()
     {
-        print($endpoint);
         $this->client = new Client([
-            'base_uri' => $endpoint ?? config('oathello.endpoint'),
-            'auth'     => $key ?? [config('oathello.key'), config('oathello.key')]
+            'base_uri' => config('oathello.endpoint'),
+            'auth'     => [config('oathello.key'), config('oathello.key')]
         ]);
     }
 
@@ -44,5 +43,10 @@ class Oathello
         return json_decode(
             $response->getBody()->getContents()
         );
+    }
+
+    public function test()
+    {
+        dd('testing');
     }
 }
