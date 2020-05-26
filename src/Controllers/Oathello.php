@@ -44,9 +44,4 @@ class Oathello
             $response->getBody()->getContents()
         );
     }
-
-    public function test()
-    {
-        dd('testing');
-    }
 }
