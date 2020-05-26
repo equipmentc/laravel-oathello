@@ -14,6 +14,6 @@ class ServiceProvider extends LaravelServiceProvider
     {
         $this->publishes([
             __DIR__.'/../config/oathello.php' => config_path('oathello.php'),
-        ]);
+        ], 'oathello');
     }
 }

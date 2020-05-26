@@ -4,6 +4,9 @@ Oathello API Laravel package
 ## Install
 composer require equipmentc/laravel-oathello
 
+## publish config
+php artisan vendor:publish --tag=oathello
+
 ## add to .env
 OATHELLO_ENDPOINT=https://sign.oathello.com/api/  (optional)  
 OATHELLO_API_KEY=xyz
