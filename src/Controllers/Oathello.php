@@ -35,11 +35,9 @@ class Oathello
     public function __call($name, array $arguments)
     {
         try {
-
-            if ($arguments[1]) {
+            if (isset($arguments[1])) {
                 $arguments[1] = ['json' => $arguments[1]];
             }
-
             $response = call_user_func_array([$this->client, $name], $arguments);
         }
         catch (ClientException $e) {
@@ -48,6 +46,6 @@ class Oathello
 
         return json_decode(
             $response->getBody()->getContents()
-        );
+        ) ??  $response->getStatusCode();
     }
 }
