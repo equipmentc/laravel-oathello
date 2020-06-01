@@ -18,6 +18,6 @@
     </filter>
     <php>
         <const name="ENDPOINT" value="https://sign.oathello.com/api/"/>
-        <const name="KEY" value="test"/>
+        <const name="KEY" value=""/>
     </php>
 </phpunit>

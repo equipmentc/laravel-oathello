@@ -28,3 +28,6 @@ Oathello::post('Session', $array);
 
 ## Swagger endpoints
 [https://sign.oathello.com/swagger](https://sign.oathello.com/swagger)
+
+## Swagger endpoints
+[https://sign.oathello.com/swagger](https://sign.oathello.com/swagger)

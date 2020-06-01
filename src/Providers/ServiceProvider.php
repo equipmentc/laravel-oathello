@@ -15,7 +15,5 @@ class ServiceProvider extends LaravelServiceProvider
         $this->publishes([
             __DIR__.'/../config/oathello.php' => config_path('oathello.php'),
         ], 'oathello');
-
-        $this->app->make('Illuminate\Database\Eloquent\Factory')->load(__DIR__ . '/../database/factories');
     }
 }
