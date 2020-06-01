@@ -29,5 +29,5 @@ Oathello::post('Session', $array);
 ## Swagger endpoints
 [https://sign.oathello.com/swagger](https://sign.oathello.com/swagger)
 
-## Swagger endpoints
-[https://sign.oathello.com/swagger](https://sign.oathello.com/swagger)
+## Testing
+Add your own API key to the phpunit.xml file.
