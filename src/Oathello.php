@@ -1,6 +1,6 @@
 <?php
 
-namespace Equipmentc\Oathello\Controllers;
+namespace Equipmentc\Oathello;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
@@ -21,7 +21,7 @@ class Oathello
         $this->client = new Client([
             'headers' => [ 'Content-Type' => 'application/json' ],
             'base_uri' => config('oathello.endpoint'),
-            'auth'     => [config('oathello.key'), config('oathello.key')]
+            'auth'     => [config('oathello.api_key'), config('oathello.api_key')]
         ]);
     }
 
@@ -30,9 +30,9 @@ class Oathello
      *
      * @param  string $name Method
      * @param  array  $arguments
-     * @return object
+     * @return mixed
      */
-    public function __call($name, array $arguments)
+    public function __call(string $name, array $arguments)
     {
         try {
             if (isset($arguments[1])) {
@@ -46,6 +46,6 @@ class Oathello
 
         return json_decode(
             $response->getBody()->getContents()
-        ) ??  $response->getStatusCode();
+        );
     }
 }

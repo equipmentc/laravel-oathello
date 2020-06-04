@@ -4,7 +4,7 @@ namespace Equipmentc\Oathello\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class Oathello extends Facade
+class Document extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -13,6 +13,6 @@ class Oathello extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return \Equipmentc\Oathello\Oathello::class;
+        return \Equipmentc\Oathello\Document::class;
     }
 }

@@ -25,7 +25,9 @@
                 "Equipmentc\\Oathello\\Providers\\ServiceProvider"
             ],
             "aliases": {
-                "Oathello": "Equipmentc\\Oathello\\Facades\\Oathello"
+                "Oathello": "Equipmentc\\Oathello\\Facades\\Oathello",
+                "Envelope": "Equipmentc\\Oathello\\Facades\\Envelope",
+                "Document": "Equipmentc\\Oathello\\Facades\\Document"
             }
         }
     },

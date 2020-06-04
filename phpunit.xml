@@ -7,7 +7,7 @@
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          processIsolation="false"
-         stopOnFailure="false">
+         stopOnFailure="true">
     <testsuite name="Feature">
         <directory suffix="Test.php">tests</directory>
     </testsuite>
@@ -17,7 +17,8 @@
         </whitelist>
     </filter>
     <php>
-        <const name="ENDPOINT" value="https://sign.oathello.com/api/"/>
-        <const name="KEY" value=""/>
+        <const name="oathello.endpoint" value="https://sign.oathello.com/api/"/>
+        <const name="oathello.api_key" value=""/>
+        <const name="oathello.callback_url" value="https://google.com"/>
     </php>
 </phpunit>

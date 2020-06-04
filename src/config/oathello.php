@@ -10,6 +10,11 @@ return [
    /**
     * API access key
     */
-   'key' => env('OATHELLO_API_KEY')
+   'api_key' => env('OATHELLO_API_KEY'),
+
+   /**
+    * Callback URL
+    */
+   'callback_url' => env('OATHELLO_CALLBACK_URL')
 
 ];
