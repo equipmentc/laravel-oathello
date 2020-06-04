@@ -36,7 +36,7 @@ Oathello::get('Session/xyz');
 Oathello::post('Session', $array);
 ```
 
-### 2. For embedded documents you may only be concerned with envelopes and documents.
+### 2. For embedded integrations you may only be concerned with envelopes and documents.
 
 In this scenario you can use the helper classes to simplify the process.
 Envelope is technically the session but in the majority of cases this isn't a problem as a session will contain only one envelope.
