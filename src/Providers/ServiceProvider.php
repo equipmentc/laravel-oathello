@@ -33,6 +33,7 @@ class ServiceProvider extends LaravelServiceProvider
         Blade::directive('onDocumentSigned', function ($expression) {
             return "<script>oathello.onDocumentSigned = () => {";
         });
+
         Blade::directive('endonDocumentSigned', function ($expression) {
             return "};</script>";
         });
@@ -40,6 +41,7 @@ class ServiceProvider extends LaravelServiceProvider
         Blade::directive('onSessionFinished', function ($expression) {
             return "<script>oathello.onSessionFinished = () => {";
         });
+
         Blade::directive('endonSessionFinished', function ($expression) {
             return "};</script>";
         });

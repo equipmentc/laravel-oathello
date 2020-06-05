@@ -12,7 +12,7 @@ php artisan vendor:publish --tag=oathello
 ## add to .env
 OATHELLO_ENDPOINT=https://sign.oathello.com/api/  (optional)  
 OATHELLO_API_KEY=xyz  
-OATHELLO_CALLBACK_URL=https://google.com
+OATHELLO_CALLBACK_URL=https://xyz.tld
 
 # HOW TO USE
 There are two ways to use this package.  
@@ -36,25 +36,24 @@ Oathello::get('Session/xyz');
 Oathello::post('Session', $array);
 ```
 
-### 2. For embedded integrations you may only be concerned with envelopes and documents.
+### 2. For embedded integrations you may only be concerned with documents.
 
-In this scenario you can use the helper classes to simplify the process.
-Envelope is technically the session but in the majority of cases this isn't a problem as a session will contain only one envelope.
+In this scenario you can use the helper classes OathelloSession & Document to simplify the process.
 
-#### Create an envelope of one or more documents
+#### Create a session of one or more (an envelope) documents
 ```
 $documents = [...];  (See a document array example below)
-Envelope::create($documents);
+OathelloSession::create($documents);
 ```
 
-#### Retrieve an envelope
+#### Retrieve a session
 ```
-Envelope::get($sessionId);
+OathelloSession::get($sessionId);
 ```
 
-#### Cancel an envelope
+#### Cancel a session
 ```
-Envelope::cancel($sessionId);
+OathelloSession::cancel($sessionId);
 ```
 
 #### Document example usage
@@ -63,7 +62,7 @@ $document = Document::get($documentID);
 Document::download($document);
 ```
 
-## Embed a document via blade
+# HOW TO EMBED A DOCUMENT
 ```
 @document(SESSION_ID, DOCUMENT_ID, SIGNER_ID (optional))
 @onDocumentSigned

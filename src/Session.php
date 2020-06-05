@@ -4,10 +4,10 @@ namespace Equipmentc\Oathello;
 
 use stdClass;
 
-class Envelope extends Oathello
+class Session extends Oathello
 {
     /**
-     * Create a new Session with Envelope
+     * Create a new Session
      *
      * @param  array  $documents
      * @return mixed
@@ -27,7 +27,7 @@ class Envelope extends Oathello
     }
 
     /**
-     * Fetch a Session/Envelope
+     * Fetch a Session
      *
      * @param  string   $sessionId
      * @return stdClass

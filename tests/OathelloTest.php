@@ -3,15 +3,15 @@
 namespace Equipmentc\Oathello\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Equipmentc\Oathello\Envelope;
+use Equipmentc\Oathello\Session;
 use Equipmentc\Oathello\Document;
 
 class OathelloTest extends TestCase
 {
     /**
-     * @var envelope
+     * @var session
      */
-    private $envelope;
+    private $session;
 
     /**
      * @var document
@@ -19,16 +19,16 @@ class OathelloTest extends TestCase
     private $document;
 
     /**
-     * @var session
+     * @var currentSession
      */
-    public $session;
+    private $currentSession;
 
     /**
      * Setup Client
      */
     protected function setUp(): void
     {
-        $this->envelope = new Envelope;
+        $this->session  = new Session;
         $this->document = new Document;
 
         $documents = [[
@@ -66,7 +66,7 @@ class OathelloTest extends TestCase
             ]],
         ]];
 
-        $this->session = $this->envelope->create($documents);
+        $this->currentSession = $this->session->create($documents);
     }
 
     /**
@@ -76,7 +76,7 @@ class OathelloTest extends TestCase
      */
     public function testCreateSession(): void
     {
-        $this->assertEquals($this->session->status, 'ongoing');
+        $this->assertEquals($this->currentSession->status, 'ongoing');
     }
 
     /**
@@ -87,7 +87,7 @@ class OathelloTest extends TestCase
     public function testGetSession(): void
     {
         $this->assertEquals(
-            $this->envelope->get($this->session->sessionId)->status,
+            $this->session->get($this->currentSession->sessionId)->status,
             'ongoing'
         );
     }
@@ -100,7 +100,7 @@ class OathelloTest extends TestCase
     public function testCancelSession(): void
     {
         $this->assertEquals(
-            $this->envelope->cancel($this->session->sessionId)->status,
+            $this->session->cancel($this->currentSession->sessionId)->status,
             'cancelled'
         );
     }
@@ -113,7 +113,7 @@ class OathelloTest extends TestCase
     public function testGetDocument(): void
     {
         $this->assertEquals(
-            $this->document->get($this->session->envelope->documents[0]->fingerprint)->getStatusCode(),
+            $this->document->get($this->currentSession->envelope->documents[0]->fingerprint)->getStatusCode(),
             200
         );
     }

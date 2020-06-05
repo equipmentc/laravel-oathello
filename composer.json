@@ -26,7 +26,7 @@
             ],
             "aliases": {
                 "Oathello": "Equipmentc\\Oathello\\Facades\\Oathello",
-                "Envelope": "Equipmentc\\Oathello\\Facades\\Envelope",
+                "OathelloSession": "Equipmentc\\Oathello\\Facades\\Session",
                 "Document": "Equipmentc\\Oathello\\Facades\\Document"
             }
         }
