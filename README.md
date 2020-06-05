@@ -63,6 +63,17 @@ $document = Document::get($documentID);
 Document::download($document);
 ```
 
+## Embed a document via blade
+```
+@document(SESSION_ID, DOCUMENT_ID, SIGNER_ID (optional))
+@onDocumentSigned
+    // add your javascript without script tags
+@endonDocumentSigned
+@onSessionFinished
+    // add your javascript without script tags
+@endonSessionFinished
+```
+
 ## Testing
 Add your own API key and callback url to the phpunit.xml file.
 
@@ -72,7 +83,7 @@ $documents = [[
     'title'    => 'Example',
     'fileName' => 'example.pdf',
     'mode'     => 'Signing',
-    'content'  => '{YOUR_BASE64_ENCODED_DOCUMENT}',
+    'content'  => '{{{YOUR_BASE64_ENCODED_DOCUMENT}}',
     "instructions" => [[
         "userInputFields" => [[
            "title" => "Add signature",
