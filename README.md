@@ -43,24 +43,48 @@ In this scenario you can use the helper classes OathelloSession & Document to si
 
 #### Create a session of one or more (an envelope) documents
 ```
+use Equipmentc\Oathello\Session as OathelloSession;
+
+$documents = [...];  (See a document array example below)
+$oathelloSession = new OathelloSession;
+$oathelloSession->create($documents);
+
+or the facade
+
 $documents = [...];  (See a document array example below)
 OathelloSession::create($documents);
 ```
 
 #### Retrieve a session
 ```
+$oathelloSession->get($sessionId);
+
+or the facade
+
 OathelloSession::get($sessionId);
 ```
 
 #### Cancel a session
 ```
+$oathelloSession->cancel($sessionId);
+
+or the facade
+
 OathelloSession::cancel($sessionId);
 ```
 
 #### Document example usage
 ```
-$document = Document::get($documentID);
-Document::download($document);
+use Equipmentc\Oathello\Document;
+
+$document = new Document;
+$file = $document->get($documentID);
+$document->download($file);
+
+or the facade
+
+$file = Document::get($documentID);
+Document::download($file);
 ```
 
 # HOW TO EMBED A DOCUMENT
@@ -83,7 +107,7 @@ $documents = [[
     'title'    => 'Example',
     'fileName' => 'example.pdf',
     'mode'     => 'Signing',
-    'content'  => '{{{YOUR_BASE64_ENCODED_DOCUMENT}}',
+    'content'  => '{{YOUR_BASE64_ENCODED_DOCUMENT}}',
     "instructions" => [[
         "userInputFields" => [[
            "title" => "Add signature",
