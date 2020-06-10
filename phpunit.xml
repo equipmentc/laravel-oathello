@@ -19,6 +19,6 @@
     <php>
         <const name="oathello.endpoint" value="https://sign.oathello.com/api/"/>
         <const name="oathello.api_key" value=""/>
-        <const name="oathello.callback_url" value="https://google.com"/>
+        <const name="oathello.callback_url" value="https://domain.tld"/>
     </php>
 </phpunit>

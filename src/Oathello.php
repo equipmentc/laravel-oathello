@@ -39,8 +39,7 @@ class Oathello
                 $arguments[1] = ['json' => $arguments[1]];
             }
             $response = call_user_func_array([$this->client, $name], $arguments);
-        }
-        catch (ClientException $e) {
+        } catch (ClientException $e) {
             $response = $e->getResponse();
         }
 

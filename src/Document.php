@@ -32,6 +32,4 @@ class Document extends Oathello
 
         echo $response->getBody()->getContents();
     }
-
-
 }
