@@ -9,14 +9,19 @@ class Session extends Oathello
     /**
      * Create a new Session
      *
+     * @todo waiting for confirmation from Oathello
+     *       re metadata as json instead of string
+     *
      * @param  array  $documents
+     * @param  todo   $metadata
      * @return mixed
      */
-    public function create(array $documents): stdClass
+    public function create(array $documents, $metadata = null): stdClass
     {
         $data = [
             'envelope' => [
-                'documents' => $documents
+                'documents' => $documents,
+                'metadata' => $metadata
             ],
             'sessionStatusChangeCallbackUrl' => config('oathello.callback_url'),
             "sessionDocumentViewEnabled" => true,
