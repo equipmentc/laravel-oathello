@@ -47,12 +47,12 @@ use Equipmentc\Oathello\Session as OathelloSession;
 
 $documents = [...];  (See a document array example below)
 $oathelloSession = new OathelloSession;
-$oathelloSession->create($documents);
+$oathelloSession->create($documents [, $metadata = null ]);
 
 or the facade
 
 $documents = [...];  (See a document array example below)
-OathelloSession::create($documents);
+OathelloSession::create($documents [, $metadata = null ]);
 ```
 
 #### Retrieve a session
