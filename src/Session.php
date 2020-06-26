@@ -23,9 +23,6 @@ class Session extends Oathello
                 'documents' => $documents,
                 'metadata' => $metadata
             ],
-            "multiSignatoryEmailSequence" => array_fill(0, count($documents[0]['instructions']), 'noreply@doesnotexist.co.uk'),
-            "emailTitle" =>"Documents to sign",
-            "emailContent" =>"Hello \nTo sign your documents please click the following link [LINK]",
             'sessionStatusChangeCallbackUrl' => config('oathello.callback_url'),
             "sessionDocumentViewEnabled" => true,
             "sessionDocumentDownloadEnabled" => true
