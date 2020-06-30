@@ -31,19 +31,19 @@ class ServiceProvider extends LaravelServiceProvider
         });
 
         Blade::directive('onDocumentSigned', function ($expression) {
-            return "<script>oathello.onDocumentSigned = () => {";
+            return "<script>oathello.onDocumentSigned(async function(){";
         });
 
         Blade::directive('endonDocumentSigned', function ($expression) {
-            return "};</script>";
+            return "});</script>";
         });
 
         Blade::directive('onSessionFinished', function ($expression) {
-            return "<script>oathello.onSessionFinished = () => {";
+            return "<script>oathello.onSessionFinished(async function(){";
         });
 
         Blade::directive('endonSessionFinished', function ($expression) {
-            return "};</script>";
+            return "});</script>";
         });
     }
 }

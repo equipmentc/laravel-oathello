@@ -25,7 +25,8 @@ class Session extends Oathello
             ],
             'sessionStatusChangeCallbackUrl' => config('oathello.callback_url'),
             "sessionDocumentViewEnabled" => true,
-            "sessionDocumentDownloadEnabled" => true
+            "sessionDocumentDownloadEnabled" => true,
+            "sessionRedirectURL" => null
         ];
 
         return Oathello::post('Session', $data);
